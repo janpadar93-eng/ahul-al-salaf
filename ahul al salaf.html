@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ahul Al Salaf</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Arabic_Calligraphy.svg/2048px-Arabic_Calligraphy.svg.png">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #0d3b66;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #145374;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: #f0f0f0;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #0d3b66;
+    }
+    .container {
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .quote {
+      background-color: #fff;
+      border-left: 6px solid #0d3b66;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    footer {
+      background-color: #0d3b66;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+    button {
+      background-color: #145374;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0d3b66;
+    }
+    .links a {
+      color: #0d3b66;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ahul Al Salaf</h1>
+    <p>Spreading Authentic Islamic Knowledge Based on the Understanding of the Salaf</p>
+  </header>
+
+  <nav>
+    <a href="#quran">Qur'an</a>
+    <a href="#hadith">Hadith</a>
+    <a href="#about">About</a>
+    <a href="#community">Community</a>
+  </nav>
+
+  <div class="container">
+    <section id="quran">
+      <h2>Selected Quranic Verses</h2>
+      <div class="quote">
+        <strong>Surah Al-Baqarah [2:2]</strong><br>
+        "This is the Book about which there is no doubt, a guidance for those conscious of Allah."
+      </div>
+      <div class="quote">
+        <strong>Surah Al‑‘Imrān [3:102]</strong><br>
+        "O you who have believed, fear Allah as He should be feared and do not die except as Muslims."
+      </div>
+      <div class="quote">
+        <strong>Surah Al‑Hujurat [49:13]</strong><br>
+        "O mankind, indeed We have created you from male and female and made you peoples and tribes that you may know one another..."
+      </div>
+      <div class="quote">
+        <strong>Surah Al‑Zalzalah [99:7‑8]</strong><br>
+        "So whoever does an atom’s weight of good will see it, and whoever does an atom’s weight of evil will see it."
+      </div>
+      <div class="quote">
+        <strong>Surah Az-Zumar [39:53]</strong><br>
+        "Say, 'O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allah...' "
+      </div>
+    </section>
+
+    <section id="hadith">
+      <h2>Hadith of the Day (Randomly Selected)</h2>
+      <div class="quote" id="hadithDisplay">
+        Click the button to see a Hadith.
+      </div>
+      <button onclick="showHadith()">Show Hadith</button>
+    </section>
+
+    <section id="about">
+      <h2>About Ahul Al Salaf</h2>
+      <p>
+        Ahul Al Salaf is dedicated to spreading Islamic teachings based on the Qur’an and the authentic Sunnah as understood by the righteous predecessors (Salaf al‑Salih).
+      </p>
+    </section>
+
+    <section id="community">
+      <h2>Join Our Community</h2>
+      <p>
+        Join our Discord community for discussions, reminders, and support:
+        <a href="https://discord.gg/Zzrxyfqnd3" target="_blank">https://discord.gg/Zzrxyfqnd3</a>
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Ahul Al Salaf. All rights reserved.
+  </footer>
+
+  <script>
+    const hadiths = [
+      "Whoever believes in Allah and the Last Day, let him speak good or remain silent. (Bukhari & Muslim)",
+      "Make things easy and do not make them difficult. (Bukhari)",
+      "Part of the perfection of one’s Islam is his leaving that which does not concern him. (Tirmidhi)",
+      "The strong believer is better and more beloved to Allah than the weak believer. (Muslim)",
+      "Actions are judged by intentions. (Bukhari & Muslim)",
+      "Smiling in the face of your brother is charity. (Tirmidhi)",
+      "None of you truly believes until he wishes for his brother what he wishes for himself. (Bukhari & Muslim)",
+      "The best of you are those who learn the Qur’an and teach it. (Bukhari)",
+      "A good word is Sadaqah. (Bukhari & Muslim)",
+      "Seek knowledge from the cradle to the grave. (Attributed, Tirmidhi)",
+      "When a man dies, all his deeds end except for three: ongoing charity, knowledge that is benefited from. (Muslim)",
+      "Allah does not look at your bodies nor your forms but He looks at your hearts and your deeds. (Muslim)",
+      "The world is a prison for the believer and a paradise for the disbeliever. (Muslim)",
+      "He who has in his heart the weight of a mustard seed of pride shall not enter Paradise. (Muslim)",
+      "You will not enter paradise until you believe, and you will not believe until you love one another. (Muslim)",
+      "Allah loves those who are constantly repentant and loves those who purify themselves. (Qur’an 2:222 as interpretation)",
+      "The best richness is the richness of the soul. (Bukhari & Muslim)",
+      "Richness is not having many possessions, rather true richness is contentment of the soul. (Bukhari)",
+      "Speak only good or remain silent. (Bukhari & Muslim)",
+      "Avoid envy, for envy devours good deeds as fire devours wood. (Abu Dawud)",
+      "Cleanliness is half faith. (Muslim)",
+      "None of you truly believes until he loves for his brother what he loves for himself. (Bukhari & Muslim)",
+      "The best among you are those who have the best manners and character. (Bukhari)",
+      "The best of gifts is to forgive and forget. (Anonymous narration, often cited)",
+      "Whoever calls others to guidance will have a reward similar to those who follow him. (Muslim)",
+      "When you see someone who has been given more than you in money and beauty, look to those who have been given less. (Muslim)",
+      "There is a piece of flesh in the body, when it is good the whole body is good... the heart. (Bukhari & Muslim)",
+      "He who does not thank people is not thankful to Allah. (Tirmidhi)",
+      "Be mindful of Allah wherever you are. (Tirmidhi)",
+      "Allah is gentle and loves gentleness in all things. (Bukhari & Muslim)",
+      "Modesty is part of faith. (Bukhari)",
+      "No one of you becomes a believer until he makes peace between his brother. (Muslim)",
+      "Verily Allah is merciful to those who are merciful. (Tirmidhi)",
+      "The best of you in deeds are those who are best in character. (Ibn Majah)",
+      "What is lawful is clear, what is unlawful is clear. Between them are doubtful matters. (Bukhari & Muslim)",
+      "The best of you are those who feed others and return greetings. (Tirmidhi)",
+      "A believer does not slander, curse, or speak in an obscene and foul manner. (Tirmidhi)",
+      "Whoever alleviates the hardship of his brother, Allah will alleviate his hardship, and whoever covers the faults of a Muslim, Allah will cover his faults. (Muslim)",
+      "The most beloved deeds to Allah are those done consistently, even if they are few. (Bukhari)",
+      "He who is not thankful for small things will not be thankful for large things. (Tirmidhi)"
+    ];
+
+    function showHadith() {
+      const randomHadith = hadiths[Math.floor(Math.random() * hadiths.length)];
+      document.getElementById("hadithDisplay").innerText = randomHadith;
+    }
+  </script>
+</body>
+</html>
